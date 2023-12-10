@@ -1,6 +1,16 @@
 #include "gtest/gtest.h"
 #include "../stack.h"
 
+class test_stack: public::testing::Test{
+    protected:
+    test_stack(){
+        std::cout<<"set up fixture executed \n"<<std::endl;
+    }
+
+    ~test_stack(){
+        std::cout<<"teardown fixture executed \n"<<std::endl;
+    }
+};
 
 TEST(STACK,create_first_element){
 
