@@ -18,3 +18,10 @@ cc_library(
     hdrs = ["Iserver.h"],
     visibility = ["//visibility:public"],
 )
+
+cc_library(
+    name = "mock_server",
+    srcs = ["mock_server.cpp"],
+    hdrs = ["mock_server.h"],
+    visibility = ["//visibility:public"],
+)
