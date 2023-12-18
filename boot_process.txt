@@ -1,0 +1,14 @@
+read pins boot0 and boot1
+
+fetch Main stack pointer address from 00 address
+
+fetch program counter from 0x04 address
+
+void reset_handler{
+
+    data segment init
+    bss segment init
+    
+    main();
+
+}

@@ -1,0 +1,30 @@
+
+The steps required to enable interrupts safely in an IRQ handler are:
+
+Construct the return address and save it on the IRQ stack.
+
+Save the work registers, non callee-saved registers and IRQ mode SPSR.
+
+Clear the source of the interrupt.
+
+Switch to System mode, keeping IRQs disabled.
+
+Check that the stack is eight-byte aligned and adjust if necessary.
+
+Save the User mode LR and the adjustment, 0 or 4 for Architectures v4 or v5TE, used on the User mode SP.
+
+Enable interrupts and call the C interrupt handler function.
+
+When the C interrupt handler returns, disable interrupts.
+
+Restore the User mode LR and the stack adjustment value.
+
+Readjust the stack if necessary.
+
+Switch to IRQ mode.
+
+Restore other registers and IRQ mode SPSR.
+
+Return from the IRQ.
+
+https://developer.arm.com/documentation/dui0203/j/handling-processor-exceptions/armv6-and-earlier--armv7-a-and-armv7-r-profiles/interrupt-handlers
