@@ -4,8 +4,14 @@
 #include <stdlib.h>
 
 
-void add(struct stack * a,int b){
+void add(struct stack ** ptr,int b){
 
+    struct stack *a = *ptr;
+
+    if(a==nullptr){
+        a = create_first_element(b);
+        return;
+    }
     while(a->next!=nullptr){
         a = a->next;
     }

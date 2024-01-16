@@ -5,7 +5,7 @@ struct stack {
     struct stack * next;
     };
 
-void add(struct stack * a,int b);
+void add(struct stack ** ptr,int b);
 
 int read_element_at_index(struct stack * a,int b);
 
