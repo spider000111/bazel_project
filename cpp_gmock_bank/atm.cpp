@@ -1,8 +1,8 @@
 #include "atm.h"
 
-void atm::deduct(int a){
+void atm::deduct(int amount,int account){
     myserver->connect();
-    myserver->select_account_number(a);
+    myserver->select_account_number(account);
     myserver->disconnect();
 }
 

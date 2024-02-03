@@ -7,5 +7,5 @@ Iserver * myserver;
 public:
     atm(Iserver * myserver):myserver(myserver){};
 
-    void deduct(int a);
+    void deduct(int amount,int account);
 };

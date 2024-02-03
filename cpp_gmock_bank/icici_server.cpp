@@ -15,8 +15,8 @@ bool icici::add_balance(int a){
     return true;
 }
 
-bool icici::deduct_balance(int a){
-    printf("called deduct_balance inside icici server %d \n",a);
+bool icici::deduct_balance(int amount,int account){
+    printf("called deduct_balance inside icici server %d \n",amount);
     return true;
 }
 
@@ -27,4 +27,5 @@ int icici::get_balance(){
 
 bool icici::disconnect(){
     printf("called disconnect inside icici server \n");
+    return true;
 }
