@@ -20,8 +20,17 @@ cc_library(
 )
 
 cc_library(
+    name = "atm",
+    srcs = ["atm.cpp"],
+    hdrs = ["atm.h"],
+    deps = ["//cpp_gmock_bank:Iserver"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
     name = "mock_server",
     srcs = ["mock_server.cpp"],
     hdrs = ["mock_server.h"],
+    deps = ["//cpp_gmock_bank:Iserver"],
     visibility = ["//visibility:public"],
 )
